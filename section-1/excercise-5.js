@@ -13,7 +13,10 @@ const formatStr1 = str1.replace(/[@#\[\]()!{}]/g, '')
     .filter(s => s != '')
     .filter(word => !isNaN(word));
 const arrNumber = formatStr1.map(Number);
-const sum = arrNumber.reduce((sum, num) => sum + num, 0);
+let sum = 0;
+for (let i = 0; i < arrNumber.length; i++) {
+    sum += arrNumber[i];
+}
 const avr = arrNumber.length > 0 ? (sum / arrNumber.length) : 0;
 const formatAvr = avr.toFixed(1);
 
