@@ -12,18 +12,18 @@ const arr = [
         model: 'Vf9'
     }
 ]
+const arr1 = [];
 
-const arr1 = arr.reduce((acc, car) => {
-    let brandGroup = acc.find(group => group[0].brand === car.brand);
-    
+arr.forEach(car => {
+    let brandGroup = arr1.find(group => group[0].brand === car.brand);
     if (brandGroup) {
         brandGroup.push(car);
     } else {
-        acc.push([car]);
+        arr1.push([car]);
     }
-    
-    return acc; 
-}, []);
+    // console.log(brandGroup)
+});
 
 console.log(arr1);
+
 
